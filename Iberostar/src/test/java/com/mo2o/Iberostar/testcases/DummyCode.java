@@ -31,8 +31,6 @@ public class DummyCode {
 		capabilites.setCapability("platformName", "Android");
 		capabilites.setCapability("appPackage", "com.android.contacts");
 		capabilites.setCapability("appActivity", "com.android.contacts.activities.PeopleActivity");
-
-		
 		}
 }
 
