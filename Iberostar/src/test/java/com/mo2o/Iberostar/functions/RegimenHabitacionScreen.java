@@ -4,9 +4,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
-
 import com.mo2o.Iberostar.testcases.TestBase;
-
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
@@ -129,14 +127,11 @@ public class RegimenHabitacionScreen extends CommonFunctions{
 			}
 		} catch
 		(Exception e) {
-			// TODO Auto-generated catch block
+			// TODO Auto-generated catch blockude
 			System.out.println("Ha habido errror en selección de Entrada "+ e);
 		}
 		return this;
 	}
-
-
-
 
 	public RegimenHabitacionScreen selectDiaSalida(AppiumDriver<MobileElement> driver, String mesSalida, String diaSalida) 
 			throws InterruptedException {
