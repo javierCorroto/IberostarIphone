@@ -1,0 +1,7 @@
+application.activity = com.mcfc.citymatchday
+base.pkg = com.mo2o.citymatchday.activities.SplashActivity
+nexus5Rojo = 060564b900745f89
+nexus5Blanco= 030ed56ad02398ac
+samsungS5 = a10796b7
+samsungNote4 = dd69d033
+

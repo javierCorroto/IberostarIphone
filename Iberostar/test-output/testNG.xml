@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+    <test name="Smoketest">
+   <parameter name="Device_ID" value="W3D7N15724001754" />
+      <classes>
+         <class name="com.mo2o.Iberostar.testcases.SmokeTest" />
+         <!--
+      <methods> <include name="TC002"/> </methods>
+      -->
+      </classes>
+   </test>
+</suite>
+
+

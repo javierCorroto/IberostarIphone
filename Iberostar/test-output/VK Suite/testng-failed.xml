@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [VK Suite]" parallel="tests">
+  <parameter name="Device_ID" value="a10796b7"/>
+  <test name="SGSV 5.0(failed)" parallel="tests">
+    <parameter name="Device_ID" value="a10796b7"/>
+    <classes>
+      <class name="com.mo2o.mcfc.testcases.DatosExistentes">
+        <methods>
+          <include name="setupCapabilities"/>
+          <include name="setupCapabilities"/>
+          <include name="close"/>
+          <include name="TC002"/>
+        </methods>
+      </class> <!-- com.mo2o.mcfc.testcases.DatosExistentes -->
+    </classes>
+  </test> <!-- SGSV 5.0(failed) -->
+  <test name="Note4Curve(failed)" parallel="tests">
+    <parameter name="Device_ID" value="dd69d033"/>
+    <classes>
+      <class name="com.mo2o.mcfc.testcases.DatosExistentes">
+        <methods>
+          <include name="setupCapabilities"/>
+          <include name="setupCapabilities"/>
+          <include name="close"/>
+          <include name="TC001"/>
+          <include name="TC002"/>
+        </methods>
+      </class> <!-- com.mo2o.mcfc.testcases.DatosExistentes -->
+    </classes>
+  </test> <!-- Note4Curve(failed) -->
+</suite> <!-- Failed suite [VK Suite] -->
