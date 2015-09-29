@@ -119,7 +119,7 @@ public class CommonFunctions extends TestBase{
 		}
 	}
 
-	public  void swipeCalendario (MobileElement element) {
+	public void swipeCalendario (MobileElement element) {
 		//get middle x
 		int leftX = element.getLocation().getX();
 		int rightX = leftX + element.getSize().getWidth();

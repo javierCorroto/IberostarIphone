@@ -1,10 +1,12 @@
 package com.mo2o.Iberostar.testcases;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 
 import java.lang.reflect.Method;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
@@ -38,7 +40,6 @@ public class SmokeTest extends TestBase {
 			CommonFunctions.seleccionMenuLateral(driver, seleccionMenuLateral);
 			screenSelectHotel.seleccionHotel(driver, pais, provincia, hotel);
 			selectHabitacionesFechas.selectDiaEntrada(driver, mesEntrada,diaEntrada);
-			selectHabitacionesFechas.selectDiaSalida(driver, mesSalida, diaSalida);
 			Assert.assertTrue(selectHabitacionesFechas.verificarPresenciaBtnReservar(), "Hay disponibilidad de habitaciones");
 			selectHabitacionesFechas.tapReservar();
 			regimenHabitacion.selectTipoHabitacion(driver);

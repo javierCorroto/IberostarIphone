@@ -7,9 +7,11 @@
     <classes>
       <class name="com.mo2o.Iberostar.testcases.SmokeTest">
         <methods>
-          <include name="reservaHotelEMEATarjeta"/>
+          <include name="iniciliador"/>
+          <include name="reservaHotelEMEATarjeta" invocation-numbers="0"/>
           <include name="createDriver"/>
           <include name="setDriver"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- com.mo2o.Iberostar.testcases.SmokeTest -->
     </classes>

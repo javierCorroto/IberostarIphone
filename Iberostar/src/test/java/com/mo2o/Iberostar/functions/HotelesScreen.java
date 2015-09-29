@@ -33,11 +33,12 @@ public class HotelesScreen extends CommonFunctions{
 	@AndroidFindBy(id="com.mo2o.iberostar:id/placeHolder")
 	@iOSFindBy(id="")
 	public static WebElement buttonReservarAhora; 
-
+	
 	//Seleccionar hoteles desde menu lateral Hoteles
 	public HotelesScreen  seleccionHotel(AppiumDriver<MobileElement>  driver, String pais, String provincia, String hotel ){
 		try{
 			CommonFunctions.waitForElements(driver, textPaisDroid, textPaisOS);
+			
 			//Select country
 			WebElement listaPais = driver.findElement(expandableTextViewPaisDroid);
 			List<WebElement> itemsPaisLista = listaPais.findElements(textViewPaisDroid);

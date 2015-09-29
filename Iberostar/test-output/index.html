@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-skipped">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -90,21 +90,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,  1 skipped,  </span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
                     </span>
-                    <div class="method-list-content skipped suite-Suite">
+                    <div class="method-list-content failed suite-Suite">
                       <span>
-                        <img width="3%" src="skipped.png"/>
+                        <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.mo2o.Iberostar.testcases.SmokeTest" hash-for-method="reservaHotelEMEATarjeta(reservaHotelEMEATarjeta, hoteles, Esp, diz, Royal, 1, Septiembre, 25, Septiembre, 30, public void co...)">reservaHotelEMEATarjeta(reservaHotelEMEATarjeta, hoteles, Esp, diz, Royal, 1, Septiembre, 25, Septiembre, 30, public void co...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content skipped suite-Suite -->
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -116,9 +116,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-skipped">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
+              <img src="failed.png"/>
               <span class="class-name">com.mo2o.Iberostar.testcases.SmokeTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -128,16 +128,37 @@
                   </a> <!-- reservaHotelEMEATarjeta(reservaHotelEMEATarjeta, hoteles, Esp, diz, Royal, 1, Septiembre, 25, Septiembre, 30, public void co...) -->
                   <span class="method-name">reservaHotelEMEATarjeta</span>
                   <span class="parameters">(reservaHotelEMEATarjeta, hoteles, Esp, diz, Royal, 1, Septiembre, 25, Septiembre, 30, public void com.mo2o.Iberostar.testcases.SmokeTest.reservaHotelEMEATarjeta(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method) throws java.lang.Exception)</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 80.89 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.47.1&apos;, revision: &apos;411b314&apos;, time: &apos;2015-07-30 03:03:16&apos;
+System info: host: &apos;MacBook-Pro-de-Javier.local&apos;, ip: &apos;192.168.1.102&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.10.5&apos;, java.version: &apos;1.8.0-ea&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=W3D7N15724001754, platform=LINUX, appActivity=com.mo2o.iberostar.activities.HomeActivity, desired={appActivity=com.mo2o.iberostar.activities.HomeActivity, automationName=Appium, androidPackage=com.mo2o.iberostar, platformName=Android, udid=W3D7N15724001754, deviceName=W3D7N15724001754}, platformVersion=5.0, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, androidPackage=com.mo2o.iberostar, browserName=Android, takesScreenshot=true, javascriptEnabled=true, platformName=Android, udid=W3D7N15724001754}]
+Session ID: 4af286ae-bc18-401f-8827-f2016a97e32e
+*** Element info: {Using=-android uiautomator, value=new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().descriptionContains(&quot;Elija tipo de tarifa&quot;).instance(0));new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(&quot;Elija tipo de tarifa&quot;).instance(0));}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:27)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
+	at io.appium.java_client.android.AndroidDriver.findElementByAndroidUIAutomator(AndroidDriver.java:266)
+	at io.appium.java_client.android.AndroidDriver.scrollTo(AndroidDriver.java:63)
+	at com.mo2o.Iberostar.testcases.SmokeTest.reservaHotelEMEATarjeta(SmokeTest.java:40)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
                   <em>
 (Verificar que no se puede crear cuentas con informacion erronea)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-skipped -->
+          </div> <!-- suite-Suite-class-failed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/Users/javiercorroto/Documents/workspace/code/Mobile/Iberostar/test-output/testNG.xml</span>
+            <span class="header-content">/Users/javiercorroto/git/Iberostar/test-output/testNG.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -191,12 +212,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'reservaHotelEMEATarjeta')
 data.setCell(0, 2, 'com.mo2o.Iberostar.testcases.SmokeTest')
-data.setCell(0, 3, 14);
+data.setCell(0, 3, 160471);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 14 ms</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -228,15 +249,23 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">createDriver(W3D7N15724001754)</span>
-                <span class="method-start">278 ms</span>
+                <span class="method-start">303 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-test before">
+                <span class="method-name">iniciliador</span>
+                <span class="method-start">30647 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">reservaHotelEMEATarjeta(reservaHotelEMEATarjeta, hoteles, Esp, diz, Royal, 1, Septiembre, 25, Septiembre, 30, public void co...)</span>
-                <span class="method-start">30552 ms</span>
+                <span class="method-start">46275 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">207397 ms</span>
+              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
