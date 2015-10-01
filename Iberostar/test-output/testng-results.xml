@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="208050" started-at="2015-09-27T19:14:17Z" finished-at="2015-09-27T19:17:45Z">
+  <suite name="Suite" duration-ms="77987" started-at="2015-10-01T19:35:31Z" finished-at="2015-10-01T19:36:49Z">
     <groups>
     </groups>
-    <test name="Smoketest" duration-ms="208050" started-at="2015-09-27T19:14:17Z" finished-at="2015-09-27T19:17:45Z">
+    <test name="Smoketest" duration-ms="77987" started-at="2015-10-01T19:35:31Z" finished-at="2015-10-01T19:36:49Z">
       <class name="com.mo2o.Iberostar.testcases.SmokeTest">
-        <test-method status="PASS" signature="setDriver()[pri:0, instance:com.mo2o.Iberostar.testcases.SmokeTest@57175e74]" name="setDriver" is-config="true" duration-ms="228" started-at="2015-09-27T21:14:17Z" finished-at="2015-09-27T21:14:17Z">
+        <test-method status="PASS" signature="setDriver()[pri:0, instance:com.mo2o.Iberostar.testcases.SmokeTest@57175e74]" name="setDriver" is-config="true" duration-ms="233" started-at="2015-10-01T21:35:31Z" finished-at="2015-10-01T21:35:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setDriver -->
-        <test-method status="PASS" signature="createDriver(java.lang.String)[pri:0, instance:com.mo2o.Iberostar.testcases.SmokeTest@57175e74]" name="createDriver" is-config="true" duration-ms="30344" started-at="2015-09-27T21:14:17Z" finished-at="2015-09-27T21:14:48Z">
+        <test-method status="PASS" signature="createDriver(java.lang.String)[pri:0, instance:com.mo2o.Iberostar.testcases.SmokeTest@57175e74]" name="createDriver" is-config="true" duration-ms="36052" started-at="2015-10-01T21:35:31Z" finished-at="2015-10-01T21:36:07Z">
           <params>
             <param index="0">
               <value>
@@ -22,11 +22,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createDriver -->
-        <test-method status="PASS" signature="iniciliador()[pri:0, instance:com.mo2o.Iberostar.testcases.SmokeTest@57175e74]" name="iniciliador" is-config="true" duration-ms="6874" started-at="2015-09-27T21:14:48Z" depends-on-methods="com.mo2o.Iberostar.testcases.TestBase.createDriver" finished-at="2015-09-27T21:14:54Z">
+        <test-method status="PASS" signature="iniciliador()[pri:0, instance:com.mo2o.Iberostar.testcases.SmokeTest@57175e74]" name="iniciliador" is-config="true" duration-ms="9988" started-at="2015-10-01T21:36:07Z" depends-on-methods="com.mo2o.Iberostar.testcases.TestBase.createDriver" finished-at="2015-10-01T21:36:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- iniciliador -->
-        <test-method status="FAIL" signature="reservaHotelEMEATarjeta(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.mo2o.Iberostar.testcases.SmokeTest@57175e74]" name="reservaHotelEMEATarjeta" duration-ms="160471" started-at="2015-09-27T21:15:03Z" description="Verificar que no se puede crear cuentas con informacion erronea" data-provider="Reservas" finished-at="2015-09-27T21:17:44Z">
+        <test-method status="FAIL" signature="reservaHotelEMEATarjeta(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.mo2o.Iberostar.testcases.SmokeTest@57175e74]" name="reservaHotelEMEATarjeta" duration-ms="22765" started-at="2015-10-01T21:36:25Z" description="Verificar que no se puede crear cuentas con informacion erronea" data-provider="Reservas" finished-at="2015-10-01T21:36:48Z">
           <params>
             <param index="0">
               <value>
@@ -60,22 +60,22 @@
             </param>
             <param index="6">
               <value>
-                <![CDATA[Septiembre]]>
+                <![CDATA[Noviembre]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[25]]>
+                <![CDATA[02]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[Septiembre]]>
+                <![CDATA[Noviembre]]>
               </value>
             </param>
             <param index="9">
               <value>
-                <![CDATA[30]]>
+                <![CDATA[08]]>
               </value>
             </param>
             <param index="10">
@@ -84,42 +84,19 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
+          <exception class="java.lang.Error">
             <message>
-              <![CDATA[An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 80.89 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.47.1', revision: '411b314', time: '2015-07-30 03:03:16'
-System info: host: 'MacBook-Pro-de-Javier.local', ip: '192.168.1.102', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.5', java.version: '1.8.0-ea'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=W3D7N15724001754, platform=LINUX, appActivity=com.mo2o.iberostar.activities.HomeActivity, desired={appActivity=com.mo2o.iberostar.activities.HomeActivity, automationName=Appium, androidPackage=com.mo2o.iberostar, platformName=Android, udid=W3D7N15724001754, deviceName=W3D7N15724001754}, platformVersion=5.0, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, androidPackage=com.mo2o.iberostar, browserName=Android, takesScreenshot=true, javascriptEnabled=true, platformName=Android, udid=W3D7N15724001754}]
-Session ID: 4af286ae-bc18-401f-8827-f2016a97e32e
-*** Element info: {Using=-android uiautomator, value=new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().descriptionContains("Elija tipo de tarifa").instance(0));new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains("Elija tipo de tarifa").instance(0));}]]>
+              <![CDATA[Unresolved compilation problems: 
+	The method selectTipoHabitacion(AppiumDriver<MobileElement>) is undefined for the type RegimenHabitacionScreen
+	The method selectTipoTarifa(AppiumDriver<MobileElement>) is undefined for the type RegimenHabitacionScreen
+]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 80.89 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.47.1', revision: '411b314', time: '2015-07-30 03:03:16'
-System info: host: 'MacBook-Pro-de-Javier.local', ip: '192.168.1.102', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.5', java.version: '1.8.0-ea'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities [{networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=W3D7N15724001754, platform=LINUX, appActivity=com.mo2o.iberostar.activities.HomeActivity, desired={appActivity=com.mo2o.iberostar.activities.HomeActivity, automationName=Appium, androidPackage=com.mo2o.iberostar, platformName=Android, udid=W3D7N15724001754, deviceName=W3D7N15724001754}, platformVersion=5.0, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, androidPackage=com.mo2o.iberostar, browserName=Android, takesScreenshot=true, javascriptEnabled=true, platformName=Android, udid=W3D7N15724001754}]
-Session ID: 4af286ae-bc18-401f-8827-f2016a97e32e
-*** Element info: {Using=-android uiautomator, value=new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().descriptionContains("Elija tipo de tarifa").instance(0));new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains("Elija tipo de tarifa").instance(0));}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:414)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:27)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
-	at io.appium.java_client.android.AndroidDriver.findElementByAndroidUIAutomator(AndroidDriver.java:266)
-	at io.appium.java_client.android.AndroidDriver.scrollTo(AndroidDriver.java:63)
-	at com.mo2o.Iberostar.testcases.SmokeTest.reservaHotelEMEATarjeta(SmokeTest.java:40)
+              <![CDATA[java.lang.Error: Unresolved compilation problems: 
+	The method selectTipoHabitacion(AppiumDriver<MobileElement>) is undefined for the type RegimenHabitacionScreen
+	The method selectTipoTarifa(AppiumDriver<MobileElement>) is undefined for the type RegimenHabitacionScreen
+
+	at com.mo2o.Iberostar.testcases.SmokeTest.reservaHotelEMEATarjeta(SmokeTest.java:46)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -146,11 +123,11 @@ Session ID: 4af286ae-bc18-401f-8827-f2016a97e32e
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.Error -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reservaHotelEMEATarjeta -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.mo2o.Iberostar.testcases.SmokeTest@57175e74]" name="tearDown" is-config="true" duration-ms="881" started-at="2015-09-27T21:17:44Z" finished-at="2015-09-27T21:17:45Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.mo2o.Iberostar.testcases.SmokeTest@57175e74]" name="tearDown" is-config="true" duration-ms="940" started-at="2015-10-01T21:36:48Z" finished-at="2015-10-01T21:36:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

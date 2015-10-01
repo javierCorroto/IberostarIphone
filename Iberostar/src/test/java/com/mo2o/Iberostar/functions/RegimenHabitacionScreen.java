@@ -62,119 +62,162 @@ public class RegimenHabitacionScreen extends CommonFunctions{
 	private static MobileElement textTipoTarifa; 
 
 	private double eurosTipoHabitacion;
+	private double eurosTipoTarifa;
+	private String monedaEuros = "EUR";
 
 	public double calcularImporteTotal(){
-		double importeTotal = eurosTipoHabitacion;
+		double importeTotal = eurosTipoHabitacion + eurosTipoTarifa;
 		return importeTotal;
 	}
-	public RegimenHabitacionScreen selectTipoHabitacion(AppiumDriver<MobileElement> driver) 
+//	public RegimenHabitacionScreen selectTipoHabitacion(AppiumDriver<MobileElement> driver) 
+//			throws InterruptedException {
+//		try {
+//			waitForElements(driver, waitForTxtRegimenReservaDroid, waitForTxtRegimenReservaIOS);
+//			swipeCalendario(scrollView);
+//			if (isElementPresent(textTipoHabitacionDroid) == true){
+//				int checkBoxSelected = 0;
+//				int textEurosTipoHabitacion = 0;
+//				MobileElement listaHabitaciones = driver.findElement(linearLayoutTipoHabitacionDroid);
+//				List <MobileElement> checksBoxTipoHabitacion = listaHabitaciones.findElements(checksTipoHabitacionDroid);
+//				for (WebElement checkBox : checksBoxTipoHabitacion ){
+//					checkBoxSelected ++;
+//					String checkEnabled = checkBox.getAttribute("checked");
+//					if (checkEnabled.equalsIgnoreCase("false")){
+//						checkBox.click();
+//						break;
+//					}
+//				}
+//
+//				List <MobileElement> getTextEurosTipoHabitacion = listaHabitaciones.findElements(textEurosDroid);
+//				for (MobileElement textEuros : getTextEurosTipoHabitacion){
+//					textEurosTipoHabitacion ++;
+//					if (textEurosTipoHabitacion == checkBoxSelected){
+//						System.out.println(textEuros.getText().toString());
+//						if(textEuros.getText().toLowerCase().contains(monedaEuros.toLowerCase())){
+//							String stringEuros = textEuros.getText().replaceAll(monedaEuros, "");
+//							double converStringEurosToDouble = Double.parseDouble(stringEuros);
+//							eurosTipoHabitacion = converStringEurosToDouble;
+//							break;
+//						}
+//					}
+//				}
+//			}
+//			else{ 
+//				eurosTipoHabitacion = 0;
+//			}
+//		} catch
+//		(Exception e) {
+//			// TODO Auto-generated catch block
+//			System.out.println("Ha habido errror en selección de Entrada "+ e);
+//		}
+//		return this;
+//	}
+//
+//	public RegimenHabitacionScreen selectTipoTarifa(AppiumDriver<MobileElement> driver) 
+//			throws InterruptedException {
+//		try {
+//			swipeCalendario(scrollView);
+//			if (isElementPresent(textTipoTarifaDroid) == true){
+//				int i = 0;
+//				int j = 0;
+//				String tarifa = "Flexible - SA";
+//				String lowerCaseTarifa = tarifa.toLowerCase();
+//				MobileElement listaLinearLayoutsTipoTarifa = driver.findElement(linearLayoutTipoTarifaDroid);
+//				int sizelistaLinearLayoutsTipoTarifa = listaLinearLayoutsTipoTarifa.findElements(relativaLayOutTipoTarifaDroid).size();
+//				outerlopp:
+//					for (; i < sizelistaLinearLayoutsTipoTarifa;i++){
+//						MobileElement getIndex = listaLinearLayoutsTipoTarifa.findElements(relativaLayOutTipoTarifaDroid).get(j);
+//						List <MobileElement> textTipoTarifa = getIndex.findElements(textTipoTarifaDroid);
+//						j++;
+//						for (MobileElement tipoTarifa : textTipoTarifa){
+//							System.out.println("El texto de la tarifa " + tipoTarifa.getText());
+//							if (tipoTarifa.getText().toLowerCase().equals(lowerCaseTarifa)){
+//								List <MobileElement> checksTipoTarifa = getIndex.findElements(checkTipoTarifaDroid);
+//								for (MobileElement checkTipoTarifa : checksTipoTarifa){
+//									String estadoChecked = checkTipoTarifa.getAttribute("checked");
+//									System.out.println("El estado del check es " + estadoChecked);
+//									if (checkTipoTarifa.getAttribute("checked").equals("false")){
+//										checkTipoTarifa.click();
+//										List <MobileElement> precioTipoTarifa = getIndex.findElements(textEurosDroid);
+//										for (MobileElement precioTarifa : precioTipoTarifa){
+//											System.out.println("El precio es " + precioTarifa.getText());
+//											precioTarifa.getText();
+//											String stringEuros = precioTarifa.getText().replaceAll(monedaEuros, "");
+//											double converStringEurosToDouble = Double.parseDouble(stringEuros);
+//											eurosTipoTarifa = converStringEurosToDouble;
+//											break outerlopp; 
+//										}
+//									}else if (checkTipoTarifa.getAttribute("checked").equals("true")){ 
+//										List <MobileElement> precioTipoTarifa = getIndex.findElements(textEurosDroid);
+//										for (MobileElement precioTarifa : precioTipoTarifa){
+//											System.out.println("El precio es " + precioTarifa.getText());
+//											precioTarifa.getText();
+//											String stringEuros = precioTarifa.getText().replaceAll(monedaEuros, "");
+//											double converStringEurosToDouble = Double.parseDouble(stringEuros);
+//											eurosTipoTarifa = converStringEurosToDouble;
+//											break outerlopp;
+//										}
+//									}
+//								}
+//							}
+//						}
+//					}
+//			}
+//
+//			else{ 
+//				eurosTipoTarifa = 0;
+//			}
+//		} catch
+//		(Exception e) {
+//			// TODO Auto-generated catch block
+//			System.out.println("Ha habido errror en selección de Entrada "+ e);
+//		}
+//		return this;
+//	}
+
+
+
+	
+	
+	public RegimenHabitacionScreen select(AppiumDriver<MobileElement> driver) 
 			throws InterruptedException {
 		try {
-			swipeCalendario(scrollView);
-			if (isElementPresent(textTipoHabitacionDroid) == true){
-				int checkBoxSelected = 0;
-				int textEurosTipoHabitacion = 0;
-				MobileElement listaHabitaciones = driver.findElement(linearLayoutTipoHabitacionDroid);
-				List <MobileElement> checksBoxTipoHabitacion = listaHabitaciones.findElements(checksTipoHabitacionDroid);
-				for (WebElement checkBox : checksBoxTipoHabitacion ){
-					checkBoxSelected ++;
-					String checkEnabled = checkBox.getAttribute("checked");
-					if (checkEnabled.equalsIgnoreCase("false")){
-						checkBox.click();
-						break;
-					}
-				}
-
-				List <MobileElement> getTextEurosTipoHabitacion = listaHabitaciones.findElements(textEurosDroid);
-				for (MobileElement textEuros : getTextEurosTipoHabitacion){
-					String monedaEuros = "EUR";
-					textEurosTipoHabitacion ++;
-					if (textEurosTipoHabitacion == checkBoxSelected){
-						System.out.println(textEuros.getText().toString());
-						if(textEuros.getText().toLowerCase().contains(monedaEuros.toLowerCase())){
-							String stringEuros = textEuros.getText().replaceAll(monedaEuros, "");
-							double converStringEurosToDouble = Double.parseDouble(stringEuros);
-							this.eurosTipoHabitacion = converStringEurosToDouble;
-							break;
-						}
-					}
-				}
-			}
-			else{ 
-				this.eurosTipoHabitacion = 0;
-			}
+			swipe(textTipoHabitacion, scrollView);
+			
 		} catch
 		(Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Ha habido errror en selección de Entrada "+ e);
 		}
 		return this;
-	}
-
-	public RegimenHabitacionScreen selectTipoTarifa(AppiumDriver<MobileElement> driver) 
+}
+	
+	
+	
+	
+	
+	
+	public RegimenHabitacionScreen selectDiaSalida(AppiumDriver<MobileElement> driver, String mesSalida, String diaSalida) 
 			throws InterruptedException {
 		try {
-			swipeCalendario(scrollView);
-			if (isElementPresent(textTipoTarifaDroid) == true){
-				int i = 0;
-				int j = 0;
-				String tarifa = "Flexible - SA";
-				MobileElement listaLinearLayoutsTipoTarifa = driver.findElement(linearLayoutTipoTarifaDroid);
-				int sizelistaLinearLayoutsTipoTarifa = listaLinearLayoutsTipoTarifa.findElements(relativaLayOutTipoTarifaDroid).size();
-				outerlopp:
-					for (; i < sizelistaLinearLayoutsTipoTarifa;i++){
-						MobileElement getIndex = listaLinearLayoutsTipoTarifa.findElements(relativaLayOutTipoTarifaDroid).get(j);
-						List <MobileElement> textTipoTarifa = getIndex.findElements(textTipoTarifaDroid);
-						j++;
-						for (MobileElement textTipoTarida : textTipoTarifa){
-							if (textTipoTarida.equals(tarifa)){
-								List <MobileElement> checksTipoTarifa = getIndex.findElements(textTipoTarifaDroid);
-								for (MobileElement checkTipoTarifa : checksTipoTarifa){
-									if (!checkTipoTarifa.getAttribute("Checked").equals("True")){
-										checkTipoTarifa.click();
-										List <MobileElement> precioTipoTarifa = getIndex.findElements(textEurosDroid);
-										for (MobileElement precio : precioTipoTarifa){
-											precio.getText();
-											break outerlopp;
-										}
-									}
-								}
-							}
-						}
-					}
-				else{ 
-					this.eurosTipoHabitacion = 0;
-				}
-			} catch
-			(Exception e) {
-				// TODO Auto-generated catch block
-				System.out.println("Ha habido errror en selección de Entrada "+ e);
-			}
-			return this;
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Ha habido errror en selección de Entrada "+ e);
+
+
+
+
 		}
-
-
-		public RegimenHabitacionScreen selectDiaSalida(AppiumDriver<MobileElement> driver, String mesSalida, String diaSalida) 
-				throws InterruptedException {
-			try {
-
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				System.out.println("Ha habido errror en selección de Entrada "+ e);
-
-
-
-
-			}
-			return this;
-		}
-
-		public boolean verificarPresenciaRegimenHabitacionTxt(){
-			waitForElements(driver, waitForTxtRegimenReservaDroid, waitForTxtRegimenReservaIOS);
-			txtRegimenHabitacion.isDisplayed();
-			return true;	
-		}
-
-
+		return this;
 	}
+
+	public boolean verificarPresenciaRegimenHabitacionTxt(){
+		waitForElements(driver, waitForTxtRegimenReservaDroid, waitForTxtRegimenReservaIOS);
+		txtRegimenHabitacion.isDisplayed();
+		return true;	
+	}
+
+
+}
 

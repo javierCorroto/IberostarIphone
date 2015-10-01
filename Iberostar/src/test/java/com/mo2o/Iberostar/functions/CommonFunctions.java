@@ -1,6 +1,7 @@
 package com.mo2o.Iberostar.functions;
 
 import java.lang.reflect.Method;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
@@ -8,11 +9,13 @@ import java.util.logging.Logger;
 import org.apache.log4j.Priority;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.internal.Coordinates;
+import org.openqa.selenium.internal.Locatable;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -24,11 +27,15 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSFindBy;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 
 public class CommonFunctions extends TestBase{
 
 	public AppiumDriver <MobileElement> driver;
+	private String p;
+	private int intP;
+	private int intTrans;
 
 	public CommonFunctions(AppiumDriver <MobileElement> driver){
 		this.driver = driver;
@@ -130,14 +137,44 @@ public class CommonFunctions extends TestBase{
 		driver.swipe(middleX , lowery, middleX, upperY, 4000);
 	}
 
-	public boolean isElementPresent(By by){
+	public void swipe (MobileElement textTipoHabitacion, MobileElement lay) {
+		//get middle x
 		try {
-			driver.findElement(by);
-			return true;
+			int leftX = lay.getLocation().getX();
+			int rightX = leftX + lay.getSize().getWidth();
+			int middleX = (rightX-leftX)/2;
+			// get the Y coordinate of the upper left corner of the element, then subtract the height to get the lowest Y value of the element
+			int upperY = lay.getLocation().getY();
+			int lowery = (lay.getSize().height - 20) + upperY;
+			int middleY = lowery - upperY;
+			int swipeToY = (int) (middleY *1.5);
+
+			while (isElementPresent(textTipoHabitacion) == false){
+				driver.swipe(middleX , lowery, middleX, swipeToY, 4000);
+			}
+			intP = ((Locatable)textTipoHabitacion).getCoordinates().onPage().getY();
+			while ( intP > middleY ){
+				intP = ((Locatable)textTipoHabitacion).getCoordinates().onPage().getY();
+				driver.swipe(middleX , lowery, middleX, swipeToY, 4000);
+			}
+		} catch
+		(Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Ha habido errror en selecciOn de Entrada "+ e);
+		}
+	}
+
+	public boolean isElementPresent(MobileElement textTipoHabitacion ){
+		try {
+			//driver.findElement(textTipoHabitacion);
+			if (textTipoHabitacion.isDisplayed()){
+				return true;
+			}
 		}
 		catch (Exception e){
-			return false;
+
 		}
+		return false;
 	}
 }
 
