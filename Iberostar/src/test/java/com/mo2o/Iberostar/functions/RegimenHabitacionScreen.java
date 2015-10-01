@@ -69,49 +69,49 @@ public class RegimenHabitacionScreen extends CommonFunctions{
 		double importeTotal = eurosTipoHabitacion + eurosTipoTarifa;
 		return importeTotal;
 	}
-//	public RegimenHabitacionScreen selectTipoHabitacion(AppiumDriver<MobileElement> driver) 
-//			throws InterruptedException {
-//		try {
-//			waitForElements(driver, waitForTxtRegimenReservaDroid, waitForTxtRegimenReservaIOS);
-//			swipeCalendario(scrollView);
-//			if (isElementPresent(textTipoHabitacionDroid) == true){
-//				int checkBoxSelected = 0;
-//				int textEurosTipoHabitacion = 0;
-//				MobileElement listaHabitaciones = driver.findElement(linearLayoutTipoHabitacionDroid);
-//				List <MobileElement> checksBoxTipoHabitacion = listaHabitaciones.findElements(checksTipoHabitacionDroid);
-//				for (WebElement checkBox : checksBoxTipoHabitacion ){
-//					checkBoxSelected ++;
-//					String checkEnabled = checkBox.getAttribute("checked");
-//					if (checkEnabled.equalsIgnoreCase("false")){
-//						checkBox.click();
-//						break;
-//					}
-//				}
-//
-//				List <MobileElement> getTextEurosTipoHabitacion = listaHabitaciones.findElements(textEurosDroid);
-//				for (MobileElement textEuros : getTextEurosTipoHabitacion){
-//					textEurosTipoHabitacion ++;
-//					if (textEurosTipoHabitacion == checkBoxSelected){
-//						System.out.println(textEuros.getText().toString());
-//						if(textEuros.getText().toLowerCase().contains(monedaEuros.toLowerCase())){
-//							String stringEuros = textEuros.getText().replaceAll(monedaEuros, "");
-//							double converStringEurosToDouble = Double.parseDouble(stringEuros);
-//							eurosTipoHabitacion = converStringEurosToDouble;
-//							break;
-//						}
-//					}
-//				}
-//			}
-//			else{ 
-//				eurosTipoHabitacion = 0;
-//			}
-//		} catch
-//		(Exception e) {
-//			// TODO Auto-generated catch block
-//			System.out.println("Ha habido errror en selección de Entrada "+ e);
-//		}
-//		return this;
-//	}
+	public RegimenHabitacionScreen selectTipoHabitacion(AppiumDriver<MobileElement> driver) 
+			throws InterruptedException {
+		try {
+			waitForElements(driver, waitForTxtRegimenReservaDroid, waitForTxtRegimenReservaIOS);
+			swipe(textTipoHabitacion, scrollView);
+			if (isElementPresent(textTipoHabitacion) == true){
+				int checkBoxSelected = 0;
+				int textEurosTipoHabitacion = 0;
+				MobileElement listaHabitaciones = driver.findElement(linearLayoutTipoHabitacionDroid);
+				List <MobileElement> checksBoxTipoHabitacion = listaHabitaciones.findElements(checksTipoHabitacionDroid);
+				for (WebElement checkBox : checksBoxTipoHabitacion ){
+					checkBoxSelected ++;
+					String checkEnabled = checkBox.getAttribute("checked");
+					if (checkEnabled.equalsIgnoreCase("false")){
+						checkBox.click();
+						break;
+					}
+				}
+
+				List <MobileElement> getTextEurosTipoHabitacion = listaHabitaciones.findElements(textEurosDroid);
+				for (MobileElement textEuros : getTextEurosTipoHabitacion){
+					textEurosTipoHabitacion ++;
+					if (textEurosTipoHabitacion == checkBoxSelected){
+						System.out.println(textEuros.getText().toString());
+						if(textEuros.getText().toLowerCase().contains(monedaEuros.toLowerCase())){
+							String stringEuros = textEuros.getText().replaceAll(monedaEuros, "");
+							double converStringEurosToDouble = Double.parseDouble(stringEuros);
+							eurosTipoHabitacion = converStringEurosToDouble;
+							break;
+						}
+					}
+				}
+			}
+			else{ 
+				eurosTipoHabitacion = 0;
+			}
+		} catch
+		(Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Ha habido errror en selección de Entrada "+ e);
+		}
+		return this;
+	}
 //
 //	public RegimenHabitacionScreen selectTipoTarifa(AppiumDriver<MobileElement> driver) 
 //			throws InterruptedException {
@@ -179,7 +179,7 @@ public class RegimenHabitacionScreen extends CommonFunctions{
 
 	
 	
-	public RegimenHabitacionScreen select(AppiumDriver<MobileElement> driver) 
+	public RegimenHabitacionScreen selectTipo(AppiumDriver<MobileElement> driver) 
 			throws InterruptedException {
 		try {
 			swipe(textTipoHabitacion, scrollView);

@@ -37,13 +37,14 @@ public class SmokeTest extends TestBase {
 			String numHabitaciones, String mesEntrada,String diaEntrada, String mesSalida, String diaSalida, Method m)
 					throws Exception {
 		while(executeTestCase(testCase, m)){
-			regimenHabitacion.select(driver);
+			
 			CommonFunctions.seleccionMenuLateral(driver, seleccionMenuLateral);
 			screenSelectHotel.seleccionHotel(driver, pais, provincia, hotel);
 			selectHabitacionesFechas.selectDiaEntrada(driver, mesEntrada,diaEntrada);
+			selectHabitacionesFechas.selectDiaSalida(driver, mesSalida, diaSalida);
 			Assert.assertTrue(selectHabitacionesFechas.verificarPresenciaBtnReservar(), "Hay disponibilidad de habitaciones");
 			selectHabitacionesFechas.tapReservar();
-//			regimenHabitacion.selectTipoHabitacion(driver);
+			regimenHabitacion.selectTipoHabitacion(driver);
 //			regimenHabitacion.selectTipoTarifa(driver);
 			Assert.assertTrue(selectHabitacionesFechas.verificarPresenciaBtnReservar(), "Hay disponibilidad de habitaciones");
 		}

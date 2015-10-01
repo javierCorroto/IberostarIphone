@@ -146,16 +146,16 @@ public class CommonFunctions extends TestBase{
 			// get the Y coordinate of the upper left corner of the element, then subtract the height to get the lowest Y value of the element
 			int upperY = lay.getLocation().getY();
 			int lowery = (lay.getSize().height - 20) + upperY;
-			int middleY = lowery - upperY;
-			int swipeToY = (int) (middleY *1.5);
+			int middleY = (lowery + upperY) / 2;
+			int swipeToY = (int) (middleY *1.3);
 
 			while (isElementPresent(textTipoHabitacion) == false){
 				driver.swipe(middleX , lowery, middleX, swipeToY, 4000);
 			}
 			intP = ((Locatable)textTipoHabitacion).getCoordinates().onPage().getY();
 			while ( intP > middleY ){
-				intP = ((Locatable)textTipoHabitacion).getCoordinates().onPage().getY();
 				driver.swipe(middleX , lowery, middleX, swipeToY, 4000);
+				intP = ((Locatable)textTipoHabitacion).getCoordinates().onPage().getY();
 			}
 		} catch
 		(Exception e) {

@@ -134,6 +134,7 @@ public class HabitacionesScreen extends CommonFunctions{
 								String diaEnabled =  diaEntradaCalendario.getAttribute("enabled");
 								if (diaEnabled.equals("true") && diaEntradaCalendario.getText().equals(diaEntrada)){
 									diaEntradaCalendario.click();
+									elementContenedor.click();
 									break outerloop;
 								}
 							}
@@ -149,26 +150,37 @@ public class HabitacionesScreen extends CommonFunctions{
 
 	public HabitacionesScreen selectDiaSalida(AppiumDriver<MobileElement> driver, String mesSalida, String diaSalida)  throws InterruptedException {
 		try {
-			//Se busca el mes de salida
-			MobileElement listViewEntrada = driver.findElement(listViewentradaSalidaDroid);
-			List<MobileElement> entradaSalidaMestext = listViewEntrada.findElements(textEntradaSalidaMes);
+			String Salida = "Salida"; 
+			MobileElement listaContenedorSalida = driver.findElement(contenedorListasDroid);
+			List<MobileElement> itemslistaContenedorSalida = listaContenedorSalida.findElements(itemsContenedorListasDroid);
 			outerloop:
-				for (WebElement mes : entradaSalidaMestext ){
-					String mesSalidaLowerCase = mesSalida.toLowerCase();
-					//System.out.println(mes.getText());
-					//Se hace swipe hasta que se encuentre el mes seleccionado
-					while (!mes.getText().toLowerCase().contains(mesSalidaLowerCase)){
-						swipeCalendario(listView);
-					}
-					MobileElement calendarioDiasLista = driver.findElement(calendarGridDroid);
-					List<MobileElement> calendarioDiaSalida = calendarioDiasLista.findElements(calendarText);
-					for (WebElement diaSalidaCalendario : calendarioDiaSalida){
-						//System.out.println("El día es " + diaSalidaCalendario.getText());
-						//System.out.println("El día es enabled? " + diaSalidaCalendario.getAttribute("enabled"));
-						String diaEnabled =  diaSalidaCalendario.getAttribute("enabled");
-						if (diaEnabled.equals("true") && diaSalidaCalendario.getText().equals(diaSalida)){
-							diaSalidaCalendario.click();
-							break outerloop;
+				for (MobileElement elementContenedor : itemslistaContenedorSalida){
+					//System.out.println("Boton es " + elementContenedor.getText());
+					if (elementContenedor.getText().contains(Salida)){
+						elementContenedor.click();
+						elementContenedor.click();
+						//Se busca el mes de salida
+						MobileElement listViewEntrada = driver.findElement(listViewentradaSalidaDroid);
+						List<MobileElement> entradaSalidaMestext = listViewEntrada.findElements(textEntradaSalidaMes);
+
+						for (WebElement mes : entradaSalidaMestext ){
+							String mesSalidaLowerCase = mesSalida.toLowerCase();
+							//System.out.println(mes.getText());
+							//Se hace swipe hasta que se encuentre el mes seleccionado
+							while (!mes.getText().toLowerCase().contains(mesSalidaLowerCase)){
+								swipeCalendario(listView);
+							}
+							MobileElement calendarioDiasLista = driver.findElement(calendarGridDroid);
+							List<MobileElement> calendarioDiaSalida = calendarioDiasLista.findElements(calendarText);
+							for (WebElement diaSalidaCalendario : calendarioDiaSalida){
+								//System.out.println("El día es " + diaSalidaCalendario.getText());
+								//System.out.println("El día es enabled? " + diaSalidaCalendario.getAttribute("enabled"));
+								String diaEnabled =  diaSalidaCalendario.getAttribute("enabled");
+								if (diaEnabled.equals("true") && diaSalidaCalendario.getText().equals(diaSalida)){
+									diaSalidaCalendario.click();
+									break outerloop;
+								}
+							}
 						}
 					}
 				}
@@ -178,6 +190,7 @@ public class HabitacionesScreen extends CommonFunctions{
 		}
 		return this;
 	}
+
 
 	public HabitacionesScreen tapReservar(){
 		try{
