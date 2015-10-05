@@ -172,7 +172,6 @@ public class CommonFunctions extends TestBase{
 			}
 		}
 		catch (Exception e){
-
 		}
 		return false;
 	}

@@ -64,6 +64,7 @@ public class RegimenHabitacionScreen extends CommonFunctions{
 	private double eurosTipoHabitacion;
 	private double eurosTipoTarifa;
 	private String monedaEuros = "EUR";
+	private String tipoTarifa;
 
 	public double calcularImporteTotal(){
 		double importeTotal = eurosTipoHabitacion + eurosTipoTarifa;
@@ -73,8 +74,10 @@ public class RegimenHabitacionScreen extends CommonFunctions{
 			throws InterruptedException {
 		try {
 			waitForElements(driver, waitForTxtRegimenReservaDroid, waitForTxtRegimenReservaIOS);
+			//Se realiza swipe hasta que se muestre TipoHabitacion
 			swipe(textTipoHabitacion, scrollView);
 			if (isElementPresent(textTipoHabitacion) == true){
+				//Se realiza iteracion para seleccionar el checkbox y el precio ya que se encuentran en diferentes linearLayouts
 				int checkBoxSelected = 0;
 				int textEurosTipoHabitacion = 0;
 				MobileElement listaHabitaciones = driver.findElement(linearLayoutTipoHabitacionDroid);
@@ -90,7 +93,7 @@ public class RegimenHabitacionScreen extends CommonFunctions{
 
 				List <MobileElement> getTextEurosTipoHabitacion = listaHabitaciones.findElements(textEurosDroid);
 				for (MobileElement textEuros : getTextEurosTipoHabitacion){
-					textEurosTipoHabitacion ++;
+					textEurosTipoHabitacion ++;	
 					if (textEurosTipoHabitacion == checkBoxSelected){
 						System.out.println(textEuros.getText().toString());
 						if(textEuros.getText().toLowerCase().contains(monedaEuros.toLowerCase())){
@@ -112,90 +115,81 @@ public class RegimenHabitacionScreen extends CommonFunctions{
 		}
 		return this;
 	}
-//
-//	public RegimenHabitacionScreen selectTipoTarifa(AppiumDriver<MobileElement> driver) 
-//			throws InterruptedException {
-//		try {
-//			swipeCalendario(scrollView);
-//			if (isElementPresent(textTipoTarifaDroid) == true){
-//				int i = 0;
-//				int j = 0;
-//				String tarifa = "Flexible - SA";
-//				String lowerCaseTarifa = tarifa.toLowerCase();
-//				MobileElement listaLinearLayoutsTipoTarifa = driver.findElement(linearLayoutTipoTarifaDroid);
-//				int sizelistaLinearLayoutsTipoTarifa = listaLinearLayoutsTipoTarifa.findElements(relativaLayOutTipoTarifaDroid).size();
-//				outerlopp:
-//					for (; i < sizelistaLinearLayoutsTipoTarifa;i++){
-//						MobileElement getIndex = listaLinearLayoutsTipoTarifa.findElements(relativaLayOutTipoTarifaDroid).get(j);
-//						List <MobileElement> textTipoTarifa = getIndex.findElements(textTipoTarifaDroid);
-//						j++;
-//						for (MobileElement tipoTarifa : textTipoTarifa){
-//							System.out.println("El texto de la tarifa " + tipoTarifa.getText());
-//							if (tipoTarifa.getText().toLowerCase().equals(lowerCaseTarifa)){
-//								List <MobileElement> checksTipoTarifa = getIndex.findElements(checkTipoTarifaDroid);
-//								for (MobileElement checkTipoTarifa : checksTipoTarifa){
-//									String estadoChecked = checkTipoTarifa.getAttribute("checked");
-//									System.out.println("El estado del check es " + estadoChecked);
-//									if (checkTipoTarifa.getAttribute("checked").equals("false")){
-//										checkTipoTarifa.click();
-//										List <MobileElement> precioTipoTarifa = getIndex.findElements(textEurosDroid);
-//										for (MobileElement precioTarifa : precioTipoTarifa){
-//											System.out.println("El precio es " + precioTarifa.getText());
-//											precioTarifa.getText();
-//											String stringEuros = precioTarifa.getText().replaceAll(monedaEuros, "");
-//											double converStringEurosToDouble = Double.parseDouble(stringEuros);
-//											eurosTipoTarifa = converStringEurosToDouble;
-//											break outerlopp; 
-//										}
-//									}else if (checkTipoTarifa.getAttribute("checked").equals("true")){ 
-//										List <MobileElement> precioTipoTarifa = getIndex.findElements(textEurosDroid);
-//										for (MobileElement precioTarifa : precioTipoTarifa){
-//											System.out.println("El precio es " + precioTarifa.getText());
-//											precioTarifa.getText();
-//											String stringEuros = precioTarifa.getText().replaceAll(monedaEuros, "");
-//											double converStringEurosToDouble = Double.parseDouble(stringEuros);
-//											eurosTipoTarifa = converStringEurosToDouble;
-//											break outerlopp;
-//										}
-//									}
-//								}
-//							}
-//						}
-//					}
-//			}
-//
-//			else{ 
-//				eurosTipoTarifa = 0;
-//			}
-//		} catch
-//		(Exception e) {
-//			// TODO Auto-generated catch block
-//			System.out.println("Ha habido errror en selección de Entrada "+ e);
-//		}
-//		return this;
-//	}
 
-
-
-	
-	
-	public RegimenHabitacionScreen selectTipo(AppiumDriver<MobileElement> driver) 
+	public RegimenHabitacionScreen selectTipoTarifa(AppiumDriver<MobileElement> driver) 
 			throws InterruptedException {
 		try {
-			swipe(textTipoHabitacion, scrollView);
-			
+			swipe(textTipoTarifa, scrollView);
+			if (isElementPresent(textTipoTarifa) == true){
+				int i = 0;
+				int j = 0;
+				tipoTarifa = "Flexible - SA";
+				String lowerCaseTarifa = tipoTarifa.toLowerCase();
+				MobileElement listaLinearLayoutsTipoTarifa = driver.findElement(linearLayoutTipoTarifaDroid);
+				int sizelistaLinearLayoutsTipoTarifa = listaLinearLayoutsTipoTarifa.findElements(relativaLayOutTipoTarifaDroid).size();
+				outerlopp:
+					for (; i < sizelistaLinearLayoutsTipoTarifa;i++){
+						MobileElement getIndex = listaLinearLayoutsTipoTarifa.findElements(relativaLayOutTipoTarifaDroid).get(j);
+						List <MobileElement> textTipoTarifa = getIndex.findElements(textTipoTarifaDroid);
+						j++;
+						for (MobileElement tipoTarifa : textTipoTarifa){
+							System.out.println("El texto de la tarifa " + tipoTarifa.getText());
+							if (tipoTarifa.getText().toLowerCase().equals(lowerCaseTarifa)){
+								List <MobileElement> checksTipoTarifa = getIndex.findElements(checkTipoTarifaDroid);
+								for (MobileElement checkTipoTarifa : checksTipoTarifa){
+									String estadoChecked = checkTipoTarifa.getAttribute("checked");
+									System.out.println("El estado del check es " + estadoChecked);
+									if (checkTipoTarifa.getAttribute("checked").equals("false")){
+										checkTipoTarifa.click();
+										List <MobileElement> precioTipoTarifa = getIndex.findElements(textEurosDroid);
+										for (MobileElement precioTarifa : precioTipoTarifa){
+											System.out.println("El precio es " + precioTarifa.getText());
+											precioTarifa.getText();
+											String stringEuros = precioTarifa.getText().replaceAll(monedaEuros, "");
+											double converStringEurosToDouble = Double.parseDouble(stringEuros);
+											eurosTipoTarifa = converStringEurosToDouble;
+											break outerlopp; 
+										}
+									}else if (checkTipoTarifa.getAttribute("checked").equals("true")){ 
+										List <MobileElement> precioTipoTarifa = getIndex.findElements(textEurosDroid);
+										for (MobileElement precioTarifa : precioTipoTarifa){
+											System.out.println("El precio es " + precioTarifa.getText());
+											precioTarifa.getText();
+											String stringEuros = precioTarifa.getText().replaceAll(monedaEuros, "");
+											double converStringEurosToDouble = Double.parseDouble(stringEuros);
+											eurosTipoTarifa = converStringEurosToDouble;
+											break outerlopp;
+										}
+									}
+								}
+							}
+						}
+					}
+			}
+
+			else{ 
+				eurosTipoTarifa = 0;
+			}
 		} catch
 		(Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Ha habido errror en selección de Entrada "+ e);
 		}
 		return this;
-}
-	
-	
-	
-	
-	
+	}
+
+	public RegimenHabitacionScreen selectTipo(AppiumDriver<MobileElement> driver) 
+			throws InterruptedException {
+		try {
+			swipe(textTipoHabitacion, scrollView);
+
+		} catch
+		(Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Ha habido errror en selección de Entrada "+ e);
+		}
+		return this;
+	}
 	
 	public RegimenHabitacionScreen selectDiaSalida(AppiumDriver<MobileElement> driver, String mesSalida, String diaSalida) 
 			throws InterruptedException {
@@ -204,10 +198,6 @@ public class RegimenHabitacionScreen extends CommonFunctions{
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Ha habido errror en selección de Entrada "+ e);
-
-
-
-
 		}
 		return this;
 	}

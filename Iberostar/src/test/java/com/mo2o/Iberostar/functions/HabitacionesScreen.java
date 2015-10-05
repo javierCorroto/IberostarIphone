@@ -56,19 +56,18 @@ public class HabitacionesScreen extends CommonFunctions{
 
 	@AndroidFindBy(id="com.mo2o.iberostar:id/btnReservar")
 	@iOSFindBy(id="")
-	public static MobileElement buttonRervar; 
+	public static MobileElement buttonReservar; 
 
 	//Seleccionar hoteles desde menu lateral Hoteles
 	public static void selecionarHabitacion(AndroidDriver <MobileElement> driver, String numHabitaciones) throws InterruptedException{
 		try {
 			//Seleccionar botón habitación
 			CommonFunctions.waitForElements(driver, waitHabitacionesDroid, waitHabitacionesiOS);
-			//driver.tap(1, listHabitacionDroid, 1);
 			String habitaciones = "habi"; 
-			WebElement listaContenedor = driver.findElement(contenedorListasDroid);
-			List<WebElement> itemslistaContenedor = listaContenedor.findElements(itemsContenedorListasDroid);
-			for (WebElement elementContenedor : itemslistaContenedor){
-				System.out.println("Boton es " + elementContenedor.getText());
+			WebElement busquedaEntrada = driver.findElement(contenedorListasDroid);
+			List<WebElement> itemslistaEntrada = busquedaEntrada.findElements(itemsContenedorListasDroid);
+			for (WebElement elementContenedor : itemslistaEntrada){
+				//System.out.println("Boton es " + elementContenedor.getText());
 				if (elementContenedor.getText().contains(habitaciones)){
 					elementContenedor.click();
 					break;
@@ -107,7 +106,8 @@ public class HabitacionesScreen extends CommonFunctions{
 	public HabitacionesScreen selectDiaEntrada(AppiumDriver<MobileElement> driver, String mesEntrada, String diaEntrada)  throws InterruptedException {
 		try {
 			//Buscar entrada para desplegar el calendario de dia de entrada
-			String Entrada = "Entrada"; 
+			//String Entrada = "Entrada";
+			String Entrada = "in"; 
 			MobileElement listaContenedorEntrada = driver.findElement(contenedorListasDroid);
 			List<MobileElement> itemslistaContenedorEntrada = listaContenedorEntrada.findElements(itemsContenedorListasDroid);
 			outerloop:
@@ -150,7 +150,8 @@ public class HabitacionesScreen extends CommonFunctions{
 
 	public HabitacionesScreen selectDiaSalida(AppiumDriver<MobileElement> driver, String mesSalida, String diaSalida)  throws InterruptedException {
 		try {
-			String Salida = "Salida"; 
+			//String Salida = "Salida";
+			String Salida = "out"; 
 			MobileElement listaContenedorSalida = driver.findElement(contenedorListasDroid);
 			List<MobileElement> itemslistaContenedorSalida = listaContenedorSalida.findElements(itemsContenedorListasDroid);
 			outerloop:
@@ -162,7 +163,6 @@ public class HabitacionesScreen extends CommonFunctions{
 						//Se busca el mes de salida
 						MobileElement listViewEntrada = driver.findElement(listViewentradaSalidaDroid);
 						List<MobileElement> entradaSalidaMestext = listViewEntrada.findElements(textEntradaSalidaMes);
-
 						for (WebElement mes : entradaSalidaMestext ){
 							String mesSalidaLowerCase = mesSalida.toLowerCase();
 							//System.out.println(mes.getText());
@@ -170,6 +170,7 @@ public class HabitacionesScreen extends CommonFunctions{
 							while (!mes.getText().toLowerCase().contains(mesSalidaLowerCase)){
 								swipeCalendario(listView);
 							}
+							
 							MobileElement calendarioDiasLista = driver.findElement(calendarGridDroid);
 							List<MobileElement> calendarioDiaSalida = calendarioDiasLista.findElements(calendarText);
 							for (WebElement diaSalidaCalendario : calendarioDiaSalida){
@@ -195,7 +196,7 @@ public class HabitacionesScreen extends CommonFunctions{
 	public HabitacionesScreen tapReservar(){
 		try{
 			//waitForElements(driver, waitForButtonReservarDroid, waitForButtonReservarIOS);
-			buttonRervar.click();
+			buttonReservar.click();
 		} catch (Exception e) {
 			System.out.println("Ha habido errror al tratar de pulsar er "+ e);
 		}
@@ -204,7 +205,7 @@ public class HabitacionesScreen extends CommonFunctions{
 
 	public boolean verificarPresenciaBtnReservar(){
 		waitForElements(driver, waitForButtonReservarDroid, waitForButtonReservarIOS);
-		buttonRervar.isDisplayed();
+		buttonReservar.isDisplayed();
 		return true;	
 	}
 

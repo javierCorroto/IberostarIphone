@@ -101,7 +101,7 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.mo2o.Iberostar.testcases.SmokeTest" hash-for-method="reservaHotelEMEATarjeta(reservaHotelEMEATarjeta, hoteles, Esp, diz, Royal, 1, Noviembre, 02, Noviembre, 08, public void com....)">reservaHotelEMEATarjeta(reservaHotelEMEATarjeta, hoteles, Esp, diz, Royal, 1, Noviembre, 02, Noviembre, 08, public void com....)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.mo2o.Iberostar.testcases.SmokeTest" hash-for-method="reservaHotelEMEATarjeta(reservaHotelEMEATarjeta, hoteles, Esp, diz, Royal, 1, Noviembre, 16, Noviembre, 22, public void com....)">reservaHotelEMEATarjeta(reservaHotelEMEATarjeta, hoteles, Esp, diz, Royal, 1, Noviembre, 16, Noviembre, 22, public void com....)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -124,20 +124,32 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="reservaHotelEMEATarjeta(reservaHotelEMEATarjeta, hoteles, Esp, diz, Royal, 1, Noviembre, 02, Noviembre, 08, public void com....)">
-                  </a> <!-- reservaHotelEMEATarjeta(reservaHotelEMEATarjeta, hoteles, Esp, diz, Royal, 1, Noviembre, 02, Noviembre, 08, public void com....) -->
+                  <a name="reservaHotelEMEATarjeta(reservaHotelEMEATarjeta, hoteles, Esp, diz, Royal, 1, Noviembre, 16, Noviembre, 22, public void com....)">
+                  </a> <!-- reservaHotelEMEATarjeta(reservaHotelEMEATarjeta, hoteles, Esp, diz, Royal, 1, Noviembre, 16, Noviembre, 22, public void com....) -->
                   <span class="method-name">reservaHotelEMEATarjeta</span>
-                  <span class="parameters">(reservaHotelEMEATarjeta, hoteles, Esp, diz, Royal, 1, Noviembre, 02, Noviembre, 08, public void com.mo2o.Iberostar.testcases.SmokeTest.reservaHotelEMEATarjeta(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method) throws java.lang.Exception)</span>
-                  <div class="stack-trace">org.openqa.selenium.remote.SessionNotFoundException: 
-Command duration or timeout: 187 milliseconds
+                  <span class="parameters">(reservaHotelEMEATarjeta, hoteles, Esp, diz, Royal, 1, Noviembre, 16, Noviembre, 22, public void com.mo2o.Iberostar.testcases.SmokeTest.reservaHotelEMEATarjeta(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method) throws java.lang.Exception)</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Timed out after 35 seconds waiting for presence of element located by: By.id: com.mo2o.iberostar:id/btnReservar
 Build info: version: &apos;2.47.1&apos;, revision: &apos;411b314&apos;, time: &apos;2015-07-30 03:03:16&apos;
-System info: host: &apos;MBP-de-Javier.localdomain&apos;, ip: &apos;10.1.1.65&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.10.5&apos;, java.version: &apos;1.8.0-ea&apos;
+System info: host: &apos;MacBook-Pro-de-Javier.local&apos;, ip: &apos;192.168.1.102&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.10.5&apos;, java.version: &apos;1.8.0-ea&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities [{networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=W3D7N15724001754, platform=LINUX, appActivity=com.mo2o.iberostar.activities.HomeActivity, desired={appActivity=com.mo2o.iberostar.activities.HomeActivity, automationName=Appium, androidPackage=com.mo2o.iberostar, platformName=Android, udid=W3D7N15724001754, deviceName=W3D7N15724001754}, platformVersion=5.0, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, androidPackage=com.mo2o.iberostar, browserName=Android, takesScreenshot=true, javascriptEnabled=true, platformName=Android, udid=W3D7N15724001754}]
-Session ID: 10ccd071-f26f-4a9b-bf95-2b38eee41cb4
-*** Element info: {Using=id, value=com.mo2o.iberostar:id/imageViewBanner}
+Session ID: 62e1686c-eb6b-4fc1-a3e3-3cda38012619
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.mo2o.Iberostar.functions.CommonFunctions.waitForElements(CommonFunctions.java:103)
+	at com.mo2o.Iberostar.functions.HabitacionesScreen.verificarPresenciaBtnReservar(HabitacionesScreen.java:193)
+	at com.mo2o.Iberostar.testcases.SmokeTest.reservaHotelEMEATarjeta(SmokeTest.java:45)
+Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 1.74 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.47.1&apos;, revision: &apos;411b314&apos;, time: &apos;2015-07-30 03:03:16&apos;
+System info: host: &apos;MacBook-Pro-de-Javier.local&apos;, ip: &apos;192.168.1.102&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.10.5&apos;, java.version: &apos;1.8.0-ea&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=W3D7N15724001754, platform=LINUX, appActivity=com.mo2o.iberostar.activities.HomeActivity, desired={appActivity=com.mo2o.iberostar.activities.HomeActivity, automationName=Appium, androidPackage=com.mo2o.iberostar, platformName=Android, udid=W3D7N15724001754, deviceName=W3D7N15724001754}, platformVersion=5.0, webStorageEnabled=false, locationContextEnabled=false, automationName=Appium, androidPackage=com.mo2o.iberostar, browserName=Android, takesScreenshot=true, javascriptEnabled=true, platformName=Android, udid=W3D7N15724001754}]
+Session ID: 62e1686c-eb6b-4fc1-a3e3-3cda38012619
+*** Element info: {Using=id, value=com.mo2o.iberostar:id/btnReservar}
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:164)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
 	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:27)
 	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
@@ -157,10 +169,8 @@ Session ID: 10ccd071-f26f-4a9b-bf95-2b38eee41cb4
 	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:181)
 	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:1)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
-	at com.mo2o.Iberostar.functions.CommonFunctions.waitForElements(CommonFunctions.java:102)
-	at com.mo2o.Iberostar.functions.CommonFunctions.seleccionMenuLateral(CommonFunctions.java:115)
-	at com.mo2o.Iberostar.testcases.SmokeTest.reservaHotelEMEATarjeta(SmokeTest.java:41)
-... Removed 28 stack frames
+	... 27 more
+... Removed 27 stack frames
 </div> <!-- stack-trace -->
                   <em>
 (Verificar que no se puede crear cuentas con informacion erronea)                  </em>
@@ -225,12 +235,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'reservaHotelEMEATarjeta')
 data.setCell(0, 2, 'com.mo2o.Iberostar.testcases.SmokeTest')
-data.setCell(0, 3, 2390478);
+data.setCell(0, 3, 88812);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 39 minutes</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -263,23 +273,21 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
                 <span class="method-name">createDriver(W3D7N15724001754)</span>
-                <span class="method-start">377 ms</span>
+                <span class="method-start">345 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-test before">
                 <span class="method-name">iniciliador</span>
-                <span class="method-start">30241 ms</span>
+                <span class="method-start">34464 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">reservaHotelEMEATarjeta(reservaHotelEMEATarjeta, hoteles, Esp, diz, Royal, 1, Noviembre, 02, Noviembre, 08, public void com....)</span>
-                <span class="method-start">44181 ms</span>
+                <span class="method-name">reservaHotelEMEATarjeta(reservaHotelEMEATarjeta, hoteles, Esp, diz, Royal, 1, Noviembre, 16, Noviembre, 22, public void com....)</span>
+                <span class="method-start">48942 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">tearDown</span>
-                <span class="method-start">2434934 ms</span>
+                <span class="method-start">138362 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
